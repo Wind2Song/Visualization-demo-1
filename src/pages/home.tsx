@@ -3,14 +3,13 @@ import './home.scss';
 import headerBg from '../images/header.png';
 import * as echarts from 'echarts';
 
-const px = (n) => n / 2420 * (window as any).pageWidth;
 export const Home = () =>{
   const divRef = useRef(null);
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
+    const px = (n) => n / 2420 * (window as any).pageWidth;
     myChart.setOption({
       textStyle: {
-        fontSize: px(10),
         color: '#79839E'
       },
       title: {show: false},
@@ -21,7 +20,6 @@ export const Home = () =>{
         axisLine: {
           lineStyle: {color: '#083B70'}
         },
-        // nameTextStyle:{fontSize:10},
         axisLabel: {
           fontSize: px(12),
           formatter(val) {
