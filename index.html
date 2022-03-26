@@ -7,7 +7,7 @@
   <title>大屏可视化项目</title>
   <script>
     const clientHeight = document.documentElement.clientHeight
-    const clientWidth = document.documentElement.clientWidth
+    window.clientWidth = document.documentElement.clientWidth
     let pageWidth = (clientWidth/clientHeight > 16/9) ? clientHeight*(16/9) : clientWidth
     
     const pageHeight = pageWidth / (16/9)
