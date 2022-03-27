@@ -2,18 +2,15 @@ import * as echarts from "echarts";
 import React from "react";
 import { useEffect, useRef } from "react";
 import '../pages/home';
+import { baseEchartOptions } from "../shared/base-echart-options";
+import { px } from "../shared/px";
 
 export const Chart1 = () =>{
   const divRef = useRef(null);
   useEffect(() => {
   var myChart = echarts.init(divRef.current);
-  const px = (n) => n / 2420 * (window as any).pageWidth;
   myChart.setOption({
-    textStyle: {
-      color: '#79839E'
-    },
-    title: {show: false},
-    legend: {show: false},
+    ... baseEchartOptions,
     xAxis: {
       data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
       axisTick: {show: false},
@@ -32,12 +29,6 @@ export const Chart1 = () =>{
           }
         }
       },
-    },
-    grid: {
-      left: '10%',
-      right: '10%',
-      top: '10%',
-      bottom: '20%',
     },
     yAxis: {
       splitLine: {show: false},
